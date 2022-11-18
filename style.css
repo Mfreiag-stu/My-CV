@@ -1,0 +1,406 @@
+body, html {
+  background: #0f2027; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #2c5364,
+    #203a43,
+    #0f2027
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  padding: 0;
+  margin: 0;
+  color: white;
+  font-family: "Cardo", serif;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4 , h5, h6 {
+  color: coral;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+}
+
+.div-container {
+  display: flex;
+  justify-content: column;
+}
+
+/*SideBar Starts Here*/
+
+.sidebar {
+  height: 100vh;
+  min-width: 10vw;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sidenav {
+  width:60%;
+  height: 60%;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(15, 32, 39, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 25px;
+  border: 1px solid rgba(15, 32, 39, 0.18);
+}
+
+.sidenav a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5vw;
+  height: 9vh;
+  border-radius: 15px 0 0 15px;
+  text-decoration: none;
+  border: transparent;
+  margin: 0 auto;
+  transition: all 450ms ease-out;
+  transition-delay: 0s;
+}
+
+.sidenav a span {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  font-size: 1.4vw;
+  font-family: "Roboto", sans-serif;
+  transition: left 500ms ease-out, width 500ms ease-out, opacity 500ms ease-out,
+    color 300ms ease-out;
+  transition-delay: 0s;
+  opacity: 0;
+  z-index: -1;
+  border-radius: 0 15px 15px 0;
+  border: transparent;
+  width: 0;
+  height: 9vh;
+  background: rgba(15, 32, 39, 0.125);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 0 0 6px 1px rgba(15, 32, 39, 0.2);
+  left: 5vw;
+}
+
+.sidenav a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 6px 1px rgba(15, 32, 39, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.sidenav a:hover span {
+  opacity: 1;
+  left: 5vw;
+  width: 8vw;
+  color: white;
+}
+
+.sidenav a ion-icon {
+  color: #f1f1e6;
+  font-size: 2.3vw;
+}
+
+/*SideBar ends Here*/
+
+.main-text {
+  height: auto;
+  min-width: 90vw;
+}
+
+.div-section{
+  width: auto;
+  min-height: 100vh;
+  padding: 0 10vw 0 10vw;
+}
+
+#divAbout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: justify;
+  align-items: center;
+  gap: 6vmax;
+}
+
+.intro-left h1{
+  font-size: 7.5rem;
+  text-align: center;
+}
+
+
+.intro-right p{
+  font-size: 1.7rem;
+  text-align: justify;
+}
+
+/* Start Me Section*/
+
+#divMe {
+  display: justify;
+  flex-direction: column;
+}
+
+#divMe h1 {
+  box-sizing: border-box;
+  font-size: 4vmax;
+  padding: 1em 0 0.5em 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  height: 625px;
+}
+
+.ge1 { grid-area: 1 / 1 / 3 / 3; }
+.ge2 { grid-area: 1 / 3 / 3 / 4; }
+.ge3 { grid-area: 1 / 4 / 3 / 5; }
+.ge4 { grid-area: 3 / 3 / 4 / 5; }
+.ge5 { grid-area: 4 / 3 / 5 / 5; }
+.ge6 { grid-area: 3 / 1 / 5 / 2; }
+.ge7 { grid-area: 3 / 2 / 5 / 3; }
+
+.grid-element {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3%;
+  border-radius: 25px;
+  font-size: 1.25rem;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(15, 32, 39, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 25px;
+  border: 1px solid rgba(15, 32, 39, 0.18);
+  word-wrap: break-word;
+}
+
+.grid-element .show {
+  position: Absolute;
+  transition: visibility 0s, opacity 1s ease-in;
+}
+
+.grid-element .hidden {
+  position: relative;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.grid-element:hover .show, .grid-element:active .show{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.grid-element:hover .hidden, .grid-element:active .hidden{
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 2s ease-out;
+}
+
+.grid-element a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+
+.grid-element a ion-icon {
+  font-size: 15px;
+}
+
+.grid-element a:visited {
+  color: inherit;
+   text-decoration: none;
+}
+
+/* End Me Section */
+
+#divEdu {
+  display: justify;
+  flex-direction: column;
+}
+
+#divEdu h1 {
+  box-sizing: border-box;
+  font-size: 4vmax;
+  padding: 1em 0 0.5em 0;
+}
+
+.card-container {
+  max-width: 70vw;
+  margin: 0 auto;
+  display: grid;
+  gap: 7vw;
+  /*grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));*/
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+}
+
+.card-element{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 25px;
+  box-sizing: border-box;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(15, 32, 39, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 25px;
+  border: 1px solid rgba(15, 32, 39, 0.18)
+}
+
+.card-element .card-header{
+  display: flex;
+  width: 95%;
+  flex-direction: column;
+  border-bottom: 1px solid grey;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-element .card-header p{
+  font-size: 1.25em;
+}
+
+.card-element .card-header h2 {
+  color: coral;
+  font-size: 2.5em;
+  margin-bottom: 0.15rem;
+}
+
+.card-element .card-body{
+  display: flex;
+  flex-direction: column;
+  max-width: 90%;
+  margin: auto; /*Remove this line to keeep the size of the text box at the value determined in **width** but it is no longer centered overall.*/
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+
+.edu p + p{
+  margin-top: 0px;
+}
+
+#divCareer {
+  display: justify;
+  flex-direction: column;
+}
+
+#divCareer h1 {
+  box-sizing: border-box;
+  font-size: 4vmax;
+  padding: 1em 0 0.5em 0;
+}
+
+/* Footer Starts Here */
+
+footer{
+  background-color: rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vh 0 5vh 0;
+  margin-top: 60px;
+}
+
+.sti_container {
+  position: relative;
+  display: flex;
+  gap: 3vw;
+}
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: white;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  text-align: center;
+  text-decoration: none;
+  color: #2c5364;
+  border-radius: 50px;
+  -webkit-transition: width 0.7s;
+  transition: width 0.7s;
+}
+
+.btn .btn-text {
+  max-width: 0;
+  margin-left: 0;
+  display: inline-flex;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  white-space: nowrap;
+  overflow: hidden;
+  color: white;
+}
+
+.btn:hover .btn-text {
+  max-width: 300px;
+  margin-left: 10px;
+  color: #2c5364;
+}
+
+ion-icon {
+  font-size: 20px;
+}
+
+.btn-icon {
+  display: flex;
+}
+
+footer a{
+  font-family: "Oswald", sans-serif;
+  font-size:15px;
+}
+
+#popUp {
+  background-color: #eee;
+  position: fixed;
+  width: 100px;
+  text-align: center;
+  top: 70%;
+  left: 50%;
+  padding: 8px 10px;
+  transform: translate(-50%, 0);
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(15, 32, 39, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 25px;
+  font-family: "Oswald", sans-serif;
+  font-size:20px;
+}
+
+@media screen and (max-width: 1080px){
+  .sidebar { display: none;}
+  .card-container {grid-auto-flow: row;}
+  .div-section {min-height: 65vh;}
+  #divAbout {grid-template-columns: 1fr; gap: 0;}
+  .grid-container {grid-auto-flow: row; grid-template-columns: 1fr; grid-template-rows: 1fr; height: fit-content;}
+  .ge1, .ge2, .ge3, .ge4, .ge5, .ge6, .ge7 {grid-area: auto;}
+}
